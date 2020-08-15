@@ -5,7 +5,7 @@ const MovieSchema = mongoose.Schema({
     mainImage: String,
     infoImage: String,
     movieInfo: {summary: String, director: String, writers: String, genres: String, rated: String, releaseData: String},
-
+    reviews: [{review: String, datePosted: Date.now()} ]
 });
 
 const Movie = mongoose.model('Movie', MovieSchema);
