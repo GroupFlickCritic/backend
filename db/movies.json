@@ -1,13 +1,13 @@
 [
 	{
-		"title": " Coming To America",
+		"title": "Coming To America",
 		"mainImage": "https://user-images.githubusercontent.com/65630204/90316233-cbbd8780-deee-11ea-865a-6b68fe0b70cb.jpg",
 		"infoImage": "https://user-images.githubusercontent.com/65630204/90316747-4dfb7b00-def2-11ea-9e24-f4795b47f3de.jpg",
 		"movieInfo": {
 			"summary": "An extremely pampered African Prince travels to Queens, New York, and goes undercover to find a wife that he can respect for her intelligence and will.",
 			"director": "John Landis",
 			"writers": "Eddie Murphy (story), David Sheffield (screenplay) ",
-			"genres": " Comedy | Romance",
+			"genres": "Comedy | Romance",
 			"rated": "R",
 			"releaseDate": "06-29-1988"
 		},
@@ -46,7 +46,7 @@
 		]
 	},
 	{
-		"title": " Jurassic Park",
+		"title": "Jurassic Park",
 		"mainImage": "https://user-images.githubusercontent.com/65630204/90316439-315e4380-def0-11ea-882c-34c246dfc9ba.jpg",
 		"infoImage": "https://user-images.githubusercontent.com/65630204/90316806-bc403d80-def2-11ea-8ad9-906214c5cdb3.jpg",
 		"movieInfo": {
@@ -142,7 +142,7 @@
 		"mainImage": "https://user-images.githubusercontent.com/65630204/90316921-a97a3880-def3-11ea-9ef2-5006f59c520b.jpg",
 		"infoImage": "https://user-images.githubusercontent.com/65630204/90316972-20173600-def4-11ea-81fa-edc10d590fcc.jpg",
 		"movieInfo": {
-			"summary": " Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?",
+			"summary": "Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?",
 			"director": " Joe Wright",
 			"writers": "Jane Austen (novel), Deborah Moggach (screenplay)",
 			"genres": "Romance, Drama",
@@ -165,16 +165,16 @@
 		"mainImage": "https://user-images.githubusercontent.com/65630204/90316988-3de49b00-def4-11ea-89fb-650eb1f69d41.jpg",
 		"infoImage": "https://user-images.githubusercontent.com/65630204/90317035-9025bc00-def4-11ea-8440-c4fb2b6206b3.jpg",
 		"movieInfo": {
-			"summary": " During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
-			"director": " Hayao Miyazaki",
-			"writers": " Hayao Miyazaki",
+			"summary": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+			"director": "Hayao Miyazaki",
+			"writers": "Hayao Miyazaki",
 			"genres": "Animation, Adventure, Family ",
 			"rated": "PG",
 			"releaseDate": "03-28-2001"
 		},
 		"reviews": [
 			{
-				"review": " studio ghibli never makes a bad movie, and this is my favorite of all.",
+				"review": "studio ghibli never makes a bad movie, and this is my favorite of all.",
 				"datePosted": "06-12-2019"
 			},
 			{
