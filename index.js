@@ -15,7 +15,7 @@ app.get('/', (req, res)=>{
 });
 
 app.use('/api/movies', moviesController);
-
-app.listen(4040, ()=>{
+app.set('port', process.env.PORT || 4040);
+app.listen(app.set('port'), ()=>{
     console.log('App listening on port 4040 🥳🤩');
 })
