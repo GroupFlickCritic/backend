@@ -13,7 +13,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 	let newMovie = req.body;
 	Movie.create(newMovie).then(() => {
-		res.json(newMovie);
+		//return all the movies after a new movie has been created
+		Movie.find({}).then((allMovies) => {
+			res.json(allMovies);
+		});
 	});
 });
 
@@ -22,7 +25,12 @@ router.put('/:title', (req, res) => {
 	let updatedMovie = req.body;
 	Movie.findOneAndUpdate({ title: req.params.title }, updatedMovie, {
 		new: true,
-	}).then((updatedMovie) => res.json(updatedMovie));
+	}).then((updatedMovie) => {
+		//return all the movies after a movie has been updated
+		Movie.find({}).then((allMovies) => {
+			res.json(allMovies);
+		});
+	});
 });
 
 // Get a movie by title
@@ -35,7 +43,10 @@ router.get('/:title', (req, res) => {
 // Delete a movie by title
 router.delete('/:title', (req, res) => {
 	Movie.findOneAndDelete({ title: req.params.title }).then((deletedMovie) => {
-		res.json(deletedMovie);
+		//return all movies after a movie has been deleted
+		Movie.find({}).then((allMovies) => {
+			res.json(allMovies);
+		});
 	});
 });
 
