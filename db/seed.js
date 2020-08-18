@@ -6,7 +6,7 @@ Movie.deleteMany().then(() => {
 	Review.deleteMany()
 		.then(() => {
 			// New Movie 1
-			return Movie.create({
+			 Movie.create({
 				title: 'Coming To America',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316233-cbbd8780-deee-11ea-865a-6b68fe0b70cb.jpg',
@@ -23,29 +23,29 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'This show movie is evergreen, I love it more every time i watch it',
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+				 newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'Eddie killed this, this movie is gold',
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 2
-			return Movie.create({
+			Movie.create({
 				title: 'The Old Guard',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316242-ee4fa080-deee-11ea-9c26-206b3e271cc8.jpg',
@@ -63,29 +63,29 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'Awesome show, nothing negative to say about it!',
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'I wish this was a series, couldn’t get enough of the characters',
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 3
-			return Movie.create({
+			Movie.create({
 				title: 'Jurassic Park',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316439-315e4380-def0-11ea-882c-34c246dfc9ba.jpg',
@@ -103,28 +103,28 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'That T-Rex was terrifically TERRIFYING!!',
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'What an amazing score. Truly immersive.',
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 4
-			return Movie.create({
+			Movie.create({
 				title: 'Star Wars: Episode IV - A New Hope',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316469-72eeee80-def0-11ea-830b-e7cfddbba8e4.jpg',
@@ -141,28 +141,28 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'That Han is one cool cucumber!',
 					datePosted: '04-16-1998',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'Beep boop beep boooooop',
 					datePosted: '02-14-1996',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 5
-			return Movie.create({
+			Movie.create({
 				title: 'Die Hard',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316476-7e421a00-def0-11ea-998c-4ebcd24e17a7.jpg',
@@ -180,30 +180,30 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'This movie has so many great one-liners, it’s kind of ridiculous.',
 					datePosted: '01-28-2012',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'One of the greatest action films of all time. It keeps you on the edge of your seat from beginning to end. You’ll laugh. You’ll cry. You’ll love this movie!',
 					datePosted: '11-08-2015',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 6
-			return Movie.create({
+			Movie.create({
 				title: 'Indiana Jones and the Temple of Doom',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316483-8601be80-def0-11ea-9f1b-a6c95cac9038.jpg',
@@ -221,29 +221,29 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'A timeless tale of adventure, daring and intrigue.',
 					datePosted: '06-25-2018',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'I’ve seen this movie countless times since I was a child and it’s always such a pleasure to watch again and again.',
 					datePosted: '02–15-2010',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 7
-			return Movie.create({
+			Movie.create({
 				title: 'Pride and Prejudice',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316921-a97a3880-def3-11ea-9ef2-5006f59c520b.jpg',
@@ -260,29 +260,29 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'An absolute brilliantly written film. Full of passion and drama fit for all ages.',
 					datePosted: '02-08-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review: 'This remake is by far the best one.',
 					datePosted: '05-12-2012',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 
 			// New Movie 8
-			return Movie.create({
+			Movie.create({
 				title: 'Spirited Away',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316988-3de49b00-def4-11ea-89fb-650eb1f69d41.jpg',
@@ -299,25 +299,25 @@ Movie.deleteMany().then(() => {
 				},
 			}).then((newMovie) => {
 				// First Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'studio ghibli never makes a bad movie, and this is my favorite of all.',
 					datePosted: '06-12-2019',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
-				return Review.create({
+				Review.create({
 					movie: newMovie._id,
 					review:
 						'childish and lame. The graphics did not age well. Would not watch again',
 					datePosted: '02-05-2010',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					return newMovie.save();
+					newMovie.save();
 				});
 			});
 		})
