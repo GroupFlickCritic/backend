@@ -3,10 +3,9 @@ const movies = require('./movies.json');
 const Movie = require('../models/Movie');
 const Review = require('../models/Review');
 Movie.deleteMany().then(() => {
-	// console.log('Deleted all movies');
 	Review.deleteMany()
 		.then(() => {
-			// console.log('deleted all reviews');
+			// New Movie
 			return Movie.create({
 				title: 'Coming To America',
 				mainImage:
@@ -23,37 +22,67 @@ Movie.deleteMany().then(() => {
 					releaseDate: '06-29-1988',
 				},
 			}).then((newMovie) => {
-				// console.log('created coming to America');
-
-				//crate one review for coming to america
+				// First Review
 				return Review.create({
 					movie: newMovie._id,
 					review:
 						'This show movie is evergreen, I love it more every time i watch it',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					// console.log(review);
 					newMovie.reviews.push(review);
-
-					// console.log(newMovie);
 					return newMovie.save();
 				});
 
-				//a second review
+				// Second Review
 				return Review.create({
 					movie: newMovie._id,
 					review: 'Eddie killed this, this movie is gold',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					// console.log(review);
 					newMovie.reviews.push(review);
-
-					// console.log(newMovie);
 					return newMovie.save();
 				});
 			});
 
-			
+			// New Movie
+			return Movie.create({
+				title: 'The Old Guard',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316242-ee4fa080-deee-11ea-9c26-206b3e271cc8.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90316790-9ca91500-def2-11ea-810d-8746ed722696.jpg',
+				movieInfo: {
+					summary:
+						'A covert team of immortal mercenaries are suddenly exposed and must now fight to keep their identity a secret just as an unexpected new member is discovered.',
+					director: 'Gina Prince-Bythewood',
+					writers:
+						'Greg Rucka (screenplay), Greg Rucka, Leandro Fernandez (illustration)',
+					genres: 'Action | Adventure | Fantasy',
+					rated: 'R',
+					releaseDate: '07-10-2020',
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'Awesome show, nothing negative to say about it!',
+					datePosted: '08-16-2020',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'I wish this was a series, couldn’t get enough of the characters',
+					datePosted: '08-16-2020',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
 		})
 		.then(() => {
 			console.log('Seeded movies data.');
