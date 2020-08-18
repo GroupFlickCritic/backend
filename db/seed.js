@@ -324,7 +324,7 @@ Movie.deleteMany({})
 			});
 		});
 	})
-	.then(() => {
-		console.log('Seeded movies data.');
-		process.exit();
-	});
+	// .then(() => {
+	// 	console.log('Seeded movies data.');
+	// 	process.exit();
+	// });
