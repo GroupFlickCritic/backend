@@ -160,6 +160,87 @@ Movie.deleteMany().then(() => {
 					return newMovie.save();
 				});
 			});
+
+			// New Movie
+			return Movie.create({
+				title: 'Die Hard',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316476-7e421a00-def0-11ea-998c-4ebcd24e17a7.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90544220-d5e0bf80-e154-11ea-8221-3b65d99e8a6e.jpg',
+				movieInfo: {
+					Summary:
+						'An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.',
+					director: 'John McTiernan',
+					writers:
+						'Roderick Thorp (novel), Jeb Stewart (screenplay) , Steven E. De Souza (screenplay)',
+					genres: 'Action | Thriller',
+					rated: 'R',
+					releaseDate: '07-20-1988',
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'This movie has so many great one-liners, it’s kind of ridiculous.',
+					datePosted: '01-28-2012',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'One of the greatest action films of all time. It keeps you on the edge of your seat from beginning to end. You’ll laugh. You’ll cry. You’ll love this movie!',
+					datePosted: '11-08-2015',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
+
+			// New Movie
+			return Movie.create({
+				title: 'Indiana Jones and the Temple of Doom',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316483-8601be80-def0-11ea-9f1b-a6c95cac9038.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90316639-65863400-def1-11ea-9080-35cd556d8254.gif',
+				movieInfo: {
+					summary:
+						'In 1935, Indiana Jones arrives in India, still part of the British Empire, and is asked to find a mystical stone. He then stumbles upon a secret cult committing enslavement and human sacrifices in the catacombs of an ancient palace.',
+					director: 'Steven Spielberg',
+					writers:
+						'George Lucas (story), Willard Huyck (screenplay), Gloria Katz (screenplay)',
+					genres: 'Action | Adventure',
+					rated: 'PG',
+					releaseDate: '05-23-1984',
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'A timeless tale of adventure, daring and intrigue.',
+					datePosted: '06-25-2018',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'I’ve seen this movie countless times since I was a child and it’s always such a pleasure to watch again and again.',
+					datePosted: '02–15-2010',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
 		})
 		.then(() => {
 			console.log('Seeded movies data.');
