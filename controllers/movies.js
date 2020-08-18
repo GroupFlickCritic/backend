@@ -70,16 +70,24 @@ router.delete('/:title/:id', (req, res) => {
 			// res.json(deleteId);
 			// });
 			console.log(movie.reviews);
+			let arrOfNewReviews = [];
 			movie.reviews.forEach((element) => {
-				if (element['_id'] === req.params.id) {
-					//create a new set which is a clone of the reviews
-					const newReviews = new Set(reviews);
+				
+				if (element['_id'] !== req.params.id) {
+					arrOfNewReviews.push(element);
+					
+					
+					// //create a new set which is a clone of the reviews
+					// const newReviews = new Set(reviews);
 
-					newReviews.delete(element);
-					//sets the review to equals the new review array
-					movie.reviews = [...newReviews];
+					// newReviews.delete(element);
+					// //sets the review to equals the new review array
+					// movie.reviews = [...newReviews];
 				}
+
+				
 			});
+			movie.reviews = [...arrOfNewReviews];
 			Movie.findOneAndUpdate({ title: req.params.title }, movie, {
 				new: true,
 			})
