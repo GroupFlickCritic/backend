@@ -2,11 +2,13 @@ const movies = require('./movies.json');
 
 const Movie = require('../models/Movie');
 const Review = require('../models/Review');
-Movie.deleteMany().then(() => {
-	Review.deleteMany()
-		.then(() => {
+
+Movie.deleteMany({})
+	.then(() => {
+		Review.deleteMany({}).then(() => {
 			// New Movie 1
-			 Movie.create({
+
+			Movie.create({
 				title: 'Coming To America',
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316233-cbbd8780-deee-11ea-865a-6b68fe0b70cb.jpg',
@@ -30,7 +32,7 @@ Movie.deleteMany().then(() => {
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-				 newMovie.save();
+					newMovie.save();
 				});
 
 				// Second Review
@@ -320,9 +322,9 @@ Movie.deleteMany().then(() => {
 					newMovie.save();
 				});
 			});
-		})
-		.then(() => {
-			console.log('Seeded movies data.');
-			process.exit();
 		});
-});
+	})
+	.then(() => {
+		console.log('Seeded movies data.');
+		process.exit();
+	});
