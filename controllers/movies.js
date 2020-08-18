@@ -56,7 +56,12 @@ router.delete('/:title/:id', (req, res) => {
 		// });
 		movie.reviews.forEach((element) => {
 			if (element['_id'] === req.params.id) {
-				movie.reviews.pop(element);
+				//create a new set which is a clone of the reviews
+				const newReviews = new Set(reviews);
+
+				newReviews.delete(element);
+				//sets the review to equals the new review array
+				movie.reviews = [...newReveiws];
 			}
 		});
 		Movie.findOneAndUpdate({ title: req.params.title }, movie, {
