@@ -323,4 +323,4 @@ Movie.deleteMany({})
 				});
 			});
 		});
-	})
+	}).catch(console.error)
