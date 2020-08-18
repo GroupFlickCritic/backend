@@ -63,19 +63,20 @@ router.delete('/:title', (req, res) => {
 			.catch(console.error);
 	});
 });
-router.delete('/:title/:id', (req, res) => {
-	Movie.find({ title: req.params.title })
-		.then((movie) => {
-			// Movie.find({}).then((deleteId) => {
-			// res.json(deleteId);
-			// });
-			console.log(movie.reviews);
-			let arrOfNewReviews = [...movie.reviews];
+router
+	.delete('/:title/:id', (req, res) => {
+		Movie.find({ title: req.params.title })
+			.then((movie) => {
+				// Movie.find({}).then((deleteId) => {
+				// res.json(deleteId);
+				// });
+				console.log(movie.reviews);
+				let arrOfNewReviews = [...movie.reviews];
 
-			let indexToDelete = arrOfNewReviews.findIndex((review)=>{
-				return review._id === req.params.id;
-			})
-			arrOfNewReviews.splice(indexToDelete,  1);
+				let indexToDelete = arrOfNewReviews.findIndex((review) => {
+					return review._id === req.params.id;
+				});
+				arrOfNewReviews.splice(indexToDelete, 1);
 				// movie.reviews.forEach((element) => {
 
 				// 	if (element['_id'] !== req.params.id) {
@@ -91,21 +92,21 @@ router.delete('/:title/:id', (req, res) => {
 				// 	}
 
 				// });
-			movie.reviews = [...arrOfNewReviews];
-
-			Movie.findOneAndUpdate({ title: req.params.title }, movie, {
-				new: true,
+				movie.reviews = [...arrOfNewReviews];
+				movie.save();
 			})
-				.then(() => {
-					Movie.find({})
-						.then((allMovies) => {
-							res.json(allMovies);
-						})
-						.catch(console.error);
-				})
-				.catch(console.error);
-		})
-		.catch(console.error);
-});
+			.then((movie) => {
+				Movie.findOneAndUpdate({ title: req.params.title }, movie, {
+					new: true,
+				});
+			})
+			.then(() => {
+				Movie.find({})
+					.then((allMovies) => {
+						res.json(allMovies);
+					})
+					.catch(console.error);
+			})
+	})
 
 module.exports = router;
