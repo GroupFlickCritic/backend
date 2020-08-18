@@ -241,6 +241,85 @@ Movie.deleteMany().then(() => {
 					return newMovie.save();
 				});
 			});
+
+			// New Movie
+			return Movie.create({
+				title: 'Pride and Prejudice',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316921-a97a3880-def3-11ea-9ef2-5006f59c520b.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90316972-20173600-def4-11ea-81fa-edc10d590fcc.jpg',
+				movieInfo: {
+					summary:
+						'Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?',
+					director: ' Joe Wright',
+					writers: 'Jane Austen (novel), Deborah Moggach (screenplay)',
+					genres: 'Romance, Drama',
+					rated: 'PG',
+					releaseDate: '11-23-2005',
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'An absolute brilliantly written film. Full of passion and drama fit for all ages.',
+					datePosted: '02-08-2020',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'This remake is by far the best one.',
+					datePosted: '05-12-2012',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
+
+			// New Movie
+			return Movie.create({
+				title: 'Spirited Away',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316988-3de49b00-def4-11ea-89fb-650eb1f69d41.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90317035-9025bc00-def4-11ea-8440-c4fb2b6206b3.jpg',
+				movieInfo: {
+					summary:
+						"During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+					director: 'Hayao Miyazaki',
+					writers: 'Hayao Miyazaki',
+					genres: 'Animation, Adventure, Family ',
+					rated: 'PG',
+					releaseDate: '03-28-2001'
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'studio ghibli never makes a bad movie, and this is my favorite of all.',
+					datePosted: '06-12-2019',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review:
+						'childish and lame. The graphics did not age well. Would not watch again',
+					datePosted: '02-05-2010',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
 		})
 		.then(() => {
 			console.log('Seeded movies data.');
