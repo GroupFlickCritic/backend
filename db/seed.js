@@ -5,7 +5,7 @@ const Review = require('../models/Review');
 Movie.deleteMany().then(() => {
 	Review.deleteMany()
 		.then(() => {
-			// New Movie
+			// New Movie 1
 			return Movie.create({
 				title: 'Coming To America',
 				mainImage:
@@ -44,7 +44,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 2
 			return Movie.create({
 				title: 'The Old Guard',
 				mainImage:
@@ -84,7 +84,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 3
 			return Movie.create({
 				title: 'Jurassic Park',
 				mainImage:
@@ -123,7 +123,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 4
 			return Movie.create({
 				title: 'Star Wars: Episode IV - A New Hope',
 				mainImage:
@@ -161,7 +161,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 5
 			return Movie.create({
 				title: 'Die Hard',
 				mainImage:
@@ -202,7 +202,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 6
 			return Movie.create({
 				title: 'Indiana Jones and the Temple of Doom',
 				mainImage:
@@ -242,7 +242,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 7
 			return Movie.create({
 				title: 'Pride and Prejudice',
 				mainImage:
@@ -281,7 +281,7 @@ Movie.deleteMany().then(() => {
 				});
 			});
 
-			// New Movie
+			// New Movie 8
 			return Movie.create({
 				title: 'Spirited Away',
 				mainImage:
@@ -295,7 +295,7 @@ Movie.deleteMany().then(() => {
 					writers: 'Hayao Miyazaki',
 					genres: 'Animation, Adventure, Family ',
 					rated: 'PG',
-					releaseDate: '03-28-2001'
+					releaseDate: '03-28-2001',
 				},
 			}).then((newMovie) => {
 				// First Review
