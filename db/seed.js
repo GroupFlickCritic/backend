@@ -83,6 +83,83 @@ Movie.deleteMany().then(() => {
 					return newMovie.save();
 				});
 			});
+
+			// New Movie
+			return Movie.create({
+				title: 'Jurassic Park',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316439-315e4380-def0-11ea-882c-34c246dfc9ba.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90316806-bc403d80-def2-11ea-8ad9-906214c5cdb3.jpg',
+				movieInfo: {
+					summary:
+						"A pragmatic paleontologist visiting an almost complete theme park is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
+					director: 'Steven Spielberg',
+					writers:
+						'Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)',
+					genres: 'Action | Adventure | Sci-Fi | Thriller',
+					rated: 'PG-13',
+					releaseDate: '06-11-1993',
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'That T-Rex was terrifically TERRIFYING!!',
+					datePosted: '08-16-2020',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'What an amazing score. Truly immersive.',
+					datePosted: '08-16-2020',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
+
+			// New Movie
+			return Movie.create({
+				title: 'Star Wars: Episode IV - A New Hope',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316469-72eeee80-def0-11ea-830b-e7cfddbba8e4.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90316845-00334280-def3-11ea-93d3-bca801e01b18.jpg',
+				movieInfo: {
+					summary:
+						"Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+					director: 'George Lucas',
+					writers: 'George Lucas',
+					genres: 'Action, Adventure, Fantasy, Sci-Fi',
+					rated: 'PG',
+					releaseDate: '05-25-1977',
+				},
+			}).then((newMovie) => {
+				// First Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'That Han is one cool cucumber!',
+					datePosted: '04-16-1998',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+
+				// Second Review
+				return Review.create({
+					movie: newMovie._id,
+					review: 'Beep boop beep boooooop',
+					datePosted: '02-14-1996',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					return newMovie.save();
+				});
+			});
 		})
 		.then(() => {
 			console.log('Seeded movies data.');
