@@ -37,4 +37,15 @@ router.put('/:id', (req, res) => {
 		})
 		.catch(console.error);
 });
+
+router.delete('/:id', (req, res) => {
+	Review.findOneAndDelete({ _id: req.params.id }).then((deletedReview) => {
+		Review.find({})
+			.then((allReviews) => {
+				res.json(allReviews);
+			})
+			.catch(console.error);
+	});
+});
+
 module.exports = router;

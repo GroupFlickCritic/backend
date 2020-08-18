@@ -63,50 +63,5 @@ router.delete('/:title', (req, res) => {
 			.catch(console.error);
 	});
 });
-router
-	.delete('/:title/:id', (req, res) => {
-		Movie.find({ title: req.params.title })
-			.then((movie) => {
-				// Movie.find({}).then((deleteId) => {
-				// res.json(deleteId);
-				// });
-				console.log(movie.reviews);
-				let arrOfNewReviews = [...movie.reviews];
-
-				let indexToDelete = arrOfNewReviews.findIndex((review) => {
-					return review._id === req.params.id;
-				});
-				arrOfNewReviews.splice(indexToDelete, 1);
-				// movie.reviews.forEach((element) => {
-
-				// 	if (element['_id'] !== req.params.id) {
-
-				// 		arrOfNewReviews.push(element);
-
-				// 		// //create a new set which is a clone of the reviews
-				// 		// const newReviews = new Set(reviews);
-
-				// 		// newReviews.delete(element);
-				// 		// //sets the review to equals the new review array
-				// 		// movie.reviews = [...newReviews];
-				// 	}
-
-				// });
-				movie.reviews = [...arrOfNewReviews];
-				movie.save();
-			})
-			.then((movie) => {
-				Movie.findOneAndUpdate({ title: req.params.title }, movie, {
-					new: true,
-				});
-			})
-			.then(() => {
-				Movie.find({})
-					.then((allMovies) => {
-						res.json(allMovies);
-					})
-					.catch(console.error);
-			})
-	})
 
 module.exports = router;
