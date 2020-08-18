@@ -23,4 +23,18 @@ router.post('/', (req, res) => {
 		.catch(console.error);
 });
 
+router.put('/:id', (req, res) => {
+	let updatedReview = req.body;
+	Review.findOneAndUpdate({ _id: req.params.id }, updatedReview, {
+		new: true,
+	})
+		.then((updatedReview) => {
+			Review.find({})
+				.then((allReviews) => {
+					res.json(allReviews);
+				})
+				.catch(console.error);
+		})
+		.catch(console.error);
+});
 module.exports = router;
