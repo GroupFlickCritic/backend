@@ -94,7 +94,7 @@
 	{
 		"title": "Die Hard",
 		"mainImage": "https://user-images.githubusercontent.com/65630204/90316476-7e421a00-def0-11ea-998c-4ebcd24e17a7.jpg",
-		"infoImage": "https://user-images.githubusercontent.com/65630204/90316682-b39b3780-def1-11ea-97a3-ddffb886b40f.gif",
+		"infoImage": "https://user-images.githubusercontent.com/65630204/90544220-d5e0bf80-e154-11ea-8221-3b65d99e8a6e.jpg",
 		"movieInfo": {
 			"Summary": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
 			"director": "John McTiernan",
@@ -105,12 +105,12 @@
 		},
 		"reviews": [
 			{
-				"review": "",
-				"datePosted": ""
+				"review": "This movie has so many great one-liners, it’s kind of ridiculous.",
+				"datePosted": "01-28-2012"
 			},
 			{
-				"review": "",
-				"datePosted": ""
+				"review": "One of the greatest action films of all time. It keeps you on the edge of your seat from beginning to end. You’ll laugh. You’ll cry. You’ll love this movie!",
+				"datePosted": "11-08-2015"
 			}
 		]
 	},
@@ -128,12 +128,12 @@
 		},
 		"reviews": [
 			{
-				"review": "",
-				"datePosted": ""
+				"review": "A timeless tale of adventure, daring and intrigue.",
+				"datePosted": "06-25-2018"
 			},
 			{
-				"review": "",
-				"datePosted": ""
+				"review": "I’ve seen this movie countless times since I was a child and it’s always such a pleasure to watch again and again.",
+				"datePosted": "02–15-2010"
 			}
 		]
 	},
