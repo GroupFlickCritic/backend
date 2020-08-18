@@ -1,7 +1,7 @@
 const express = require('express');
 
 const moviesController = require('./controllers/movies');
-
+const reviewsController = require('./controllers/reviews');
 const cors = require('cors');
 
 const app = express();
@@ -15,6 +15,7 @@ app.get('/', (req, res)=>{
 });
 
 app.use('/api/movies', moviesController);
+app.use('/api/reviews', reviewsController)
 app.set('port', process.env.PORT || 4040);
 app.listen(app.set('port'), ()=>{
     console.log('App listening on port 4040 🥳🤩');

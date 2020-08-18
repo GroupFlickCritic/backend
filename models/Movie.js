@@ -11,7 +11,7 @@ const MovieSchema = mongoose.Schema({
 		writers: String,
 		genres: String,
 		rated: String,
-		releaseData: String,
+		releaseDate: String,
 	},
 	reviews: [{ ref: 'Review', type: mongoose.Schema.Types.ObjectId }],
 });
