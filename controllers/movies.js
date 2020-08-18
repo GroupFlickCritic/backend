@@ -49,5 +49,24 @@ router.delete('/:title', (req, res) => {
 		});
 	});
 });
+router.delete('/:title/:id', (req, res) => {
+	Movie.find({ title: req.params.title }).then((movie) => {
+		// Movie.find({}).then((deleteId) => {
+		// res.json(deleteId);
+		// });
+		movie.reviews.forEach((element) => {
+			if (element['_id'] === req.params.id) {
+				movie.reviews.pop(element);
+			}
+		});
+		Movie.findOneAndUpdate({ title: req.params.title }, movie, {
+			new: true,
+		}).then(() => {
+			Movie.find({}).then((allMovies) => {
+				res.json(allMovies);
+			});
+		});
+	});
+});
 
 module.exports = router;
