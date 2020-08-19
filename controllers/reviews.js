@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res)=>{
 	Review.findById({_id: req.params.id}).then((review)=>{
 		res.json(review);
-	})
+	}).catch(console.error)
 })
 //create a new review
 router.post('/', (req, res) => {
