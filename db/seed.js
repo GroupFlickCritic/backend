@@ -31,8 +31,10 @@ Movie.deleteMany({})
 						'This show movie is evergreen, I love it more every time i watch it',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
+
+					
 				});
 
 				// Second Review
@@ -41,7 +43,7 @@ Movie.deleteMany({})
 					review: 'Eddie killed this, this movie is gold',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -70,7 +72,7 @@ Movie.deleteMany({})
 					review: 'Awesome show, nothing negative to say about it!',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -81,7 +83,7 @@ Movie.deleteMany({})
 						'I wish this was a series, couldn’t get enough of the characters',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -110,7 +112,7 @@ Movie.deleteMany({})
 					review: 'That T-Rex was terrifically TERRIFYING!!',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -120,7 +122,7 @@ Movie.deleteMany({})
 					review: 'What an amazing score. Truly immersive.',
 					datePosted: '08-16-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -148,7 +150,7 @@ Movie.deleteMany({})
 					review: 'That Han is one cool cucumber!',
 					datePosted: '04-16-1998',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -158,7 +160,7 @@ Movie.deleteMany({})
 					review: 'Beep boop beep boooooop',
 					datePosted: '02-14-1996',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -188,7 +190,7 @@ Movie.deleteMany({})
 						'This movie has so many great one-liners, it’s kind of ridiculous.',
 					datePosted: '01-28-2012',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -199,7 +201,7 @@ Movie.deleteMany({})
 						'One of the greatest action films of all time. It keeps you on the edge of your seat from beginning to end. You’ll laugh. You’ll cry. You’ll love this movie!',
 					datePosted: '11-08-2015',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -228,7 +230,7 @@ Movie.deleteMany({})
 					review: 'A timeless tale of adventure, daring and intrigue.',
 					datePosted: '06-25-2018',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -239,7 +241,7 @@ Movie.deleteMany({})
 						'I’ve seen this movie countless times since I was a child and it’s always such a pleasure to watch again and again.',
 					datePosted: '02–15-2010',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -268,7 +270,7 @@ Movie.deleteMany({})
 						'An absolute brilliantly written film. Full of passion and drama fit for all ages.',
 					datePosted: '02-08-2020',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -278,7 +280,7 @@ Movie.deleteMany({})
 					review: 'This remake is by far the best one.',
 					datePosted: '05-12-2012',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
@@ -307,7 +309,7 @@ Movie.deleteMany({})
 						'studio ghibli never makes a bad movie, and this is my favorite of all.',
 					datePosted: '06-12-2019',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 
@@ -318,7 +320,7 @@ Movie.deleteMany({})
 						'childish and lame. The graphics did not age well. Would not watch again',
 					datePosted: '02-05-2010',
 				}).then((review) => {
-					newMovie.reviews.push(review);
+					newMovie.reviews.push(review._id);
 					newMovie.save();
 				});
 			});
