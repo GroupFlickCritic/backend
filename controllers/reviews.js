@@ -9,20 +9,18 @@ router.get('/', (req, res) => {
 		})
 		.catch(console.error);
 });
-
+//create a new review
 router.post('/', (req, res) => {
 	let newReview = req.body;
 	Review.create(newReview)
-		.then(() => {
-			Review.find({})
-				.then((allReviews) => {
-					res.json(allReviews);
-				})
-				.catch(console.error);
+		.then((theNewReview) => {
+			//return the created review
+					res.json(theNewReview);
 		})
 		.catch(console.error);
 });
 
+//update review by movie id and review id
 router.put('/:id', (req, res) => {
 	let updatedReview = req.body;
 	Review.findOneAndUpdate({ _id: req.params.id }, updatedReview, {
