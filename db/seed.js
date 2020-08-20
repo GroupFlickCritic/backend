@@ -32,7 +32,7 @@ Movie.deleteMany({})
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					
+
 					// Second Review
 					Review.create({
 						movie: newMovie._id,
@@ -81,7 +81,6 @@ Movie.deleteMany({})
 						newMovie.save();
 					});
 				});
-
 			});
 
 			// New Movie 3
@@ -119,7 +118,6 @@ Movie.deleteMany({})
 						newMovie.save();
 					});
 				});
-
 			});
 
 			// New Movie 4
@@ -156,7 +154,6 @@ Movie.deleteMany({})
 						newMovie.save();
 					});
 				});
-
 			});
 
 			// New Movie 5
@@ -180,23 +177,20 @@ Movie.deleteMany({})
 				// First Review
 				Review.create({
 					movie: newMovie._id,
-					review:
-						'Amazing!',
+					review: 'Amazing!',
 					datePosted: '01-28-2012',
 				}).then((review) => {
 					newMovie.reviews.push(review);
 					// Second Review
 					Review.create({
 						movie: newMovie._id,
-						review:
-							'Awesome!',
+						review: 'Awesome!',
 						datePosted: '11-08-2015',
 					}).then((review) => {
 						newMovie.reviews.push(review);
 						newMovie.save();
 					});
 				});
-
 			});
 
 			// New Movie 5
@@ -271,7 +265,6 @@ Movie.deleteMany({})
 						newMovie.save();
 					});
 				});
-
 			});
 
 			// New Movie 8
@@ -312,6 +305,43 @@ Movie.deleteMany({})
 				});
 
 				// Second Review
+			});
+			// New Movie 8
+			Movie.create({
+				title: 'The Lord of the Rings: The Fellowship of the Rings',
+				mainImage:
+					'https://user-images.githubusercontent.com/65630204/90316988-3de49b00-def4-11ea-89fb-650eb1f69d41.jpg',
+				infoImage:
+					'https://user-images.githubusercontent.com/65630204/90317035-9025bc00-def4-11ea-8440-c4fb2b6206b3.jpg',
+				movieInfo: {
+					summary:
+						'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
+					director: 'Peter Jackson',
+					writers:
+						'J.R.R. Tolkien (novel), Fran Walsh, Philippa Boyens (screenplay)',
+					genres: 'Action, Adventure, Drama',
+					rated: 'PG-13',
+					releaseDate: '12-19-2001',
+				},
+			}).then((newMovie) => {
+				// First Review
+				Review.create({
+					movie: newMovie._id,
+					review: 'Beautiful realized. Edge-of-the-seat exciting!',
+					datePosted: '05-01-2009',
+				}).then((review) => {
+					newMovie.reviews.push(review);
+					// Second Review
+					Review.create({
+						movie: newMovie._id,
+						review:
+							'The production design is a marvel and the special effects are dazzling.',
+						datePosted: '12-25-2001',
+					}).then((review) => {
+						newMovie.reviews.push(review);
+						newMovie.save();
+					});
+				});
 			});
 		});
 	})
