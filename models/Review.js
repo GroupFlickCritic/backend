@@ -5,8 +5,9 @@ const ReviewSchema = mongoose.Schema({
 	datePosted: Date,
 	movie: {
 		ref: 'Movie',
-		type: mongoose.Schema.Types.ObjectId
-	}
+		type: mongoose.Schema.Types.ObjectId,
+	},
 });
 const Review = mongoose.model('Review', ReviewSchema);
+
 module.exports = Review;
