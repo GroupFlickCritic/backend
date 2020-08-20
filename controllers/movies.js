@@ -1,6 +1,6 @@
 const express = require('express');
 const Movie = require('../models/Movie');
-const Review = require('../models/Review')
+const Review = require('../models/Review');
 const router = express.Router();
 
 // Get all the movies
@@ -16,9 +16,9 @@ router.get('/', (req, res) => {
 router.put('/:id/:reviewId', (req, res) => {
 	const movieID = req.params.id;
 	const reviewID = req.params.reviewId;
-	
+
 	// find a review by its id
-	Review.findById({_id: reviewID}).then((review) => {
+	Review.findById({ _id: reviewID }).then((review) => {
 		// find the movie by its id
 		Movie.findOneAndUpdate({ _id: movieID }).then((movie) => {
 			// push each id into the others array
@@ -40,9 +40,9 @@ router.put('/:id/:reviewId', (req, res) => {
 router.put('/:id/:reviewId', (req, res) => {
 	const movieID = req.params.id;
 	const reviewID = req.params.reviewId;
-	
+
 	// find a review by its id
-	Review.findById({_id: reviewID}).then((review) => {
+	Review.findById({ _id: reviewID }).then((review) => {
 		// find the movie by its id
 		Movie.findOneAndUpdate({ _id: movieID }).then((movie) => {
 			// push each id into the others array
