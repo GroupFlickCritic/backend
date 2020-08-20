@@ -16,24 +16,23 @@ router.get('/', (req, res) => {
 router.put('/:id/:reviewId', (req, res) => {
 	const movieID = req.params.id;
 	const reviewID = req.params.reviewId;
-
 	// find a review by its id
-	Review.findById({ _id: reviewID }).then((review) => {
-		// find the movie by its id
-		Movie.findOneAndUpdate({ _id: movieID }).then((movie) => {
-			// push each id into the others array
-			movie.reviews.push(review._id);
-			// review.movie.push(review._id);
-
-			// save both
-			movie.save();
-			// review.save();
-
-			// send json response
-			//we are getting back the updated movie
-			res.json(movie);
-		});
-	});
+	Review.findById({ _id: reviewID })
+		.then((review) => {
+			// find the movie by its id
+			Movie.findOneAndUpdate({ _id: movieID })
+				.then((movie) => {
+					// push each id into the others array
+					movie.reviews.push(review._id);
+					// save both
+					movie.save();
+					// send json response
+					//we are getting back the updated movie
+					res.json(movie);
+				})
+				.catch(console.error);
+		})
+		.catch(console.error);
 });
 
 // Get a movie by title
@@ -47,14 +46,16 @@ router.get('/:title', (req, res) => {
 
 // Delete a movie by title
 router.delete('/:title', (req, res) => {
-	Movie.findOneAndDelete({ title: req.params.title }).then((deletedMovie) => {
-		//return all movies after a movie has been deleted
-		Movie.find({})
-			.then((allMovies) => {
-				res.json(allMovies);
-			})
-			.catch(console.error);
-	});
+	Movie.findOneAndDelete({ title: req.params.title })
+		.then((deletedMovie) => {
+			//return all movies after a movie has been deleted
+			Movie.find({})
+				.then((allMovies) => {
+					res.json(allMovies);
+				})
+				.catch(console.error);
+		})
+		.catch(console.error);
 });
 
 module.exports = router;
