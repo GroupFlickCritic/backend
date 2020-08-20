@@ -7,7 +7,6 @@ Movie.deleteMany({})
 	.then(() => {
 		Review.deleteMany({}).then(() => {
 			// New Movie 1
-
 			Movie.create({
 				title: 'Coming To America',
 				mainImage:
@@ -32,7 +31,7 @@ Movie.deleteMany({})
 					datePosted: '08-16-2020',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-					
+
 					// Second Review
 					Review.create({
 						movie: newMovie._id,
@@ -292,7 +291,7 @@ Movie.deleteMany({})
 					datePosted: '06-12-2019',
 				}).then((review) => {
 					newMovie.reviews.push(review);
-
+					// Second Review
 					Review.create({
 						movie: newMovie._id,
 						review:
@@ -304,7 +303,6 @@ Movie.deleteMany({})
 					});
 				});
 
-				// Second Review
 			});
 			// New Movie 8
 			Movie.create({
