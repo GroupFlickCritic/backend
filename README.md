@@ -29,6 +29,28 @@ run brew services restart mongodb-community
 #### Endpoint to fetch the data of all movies in the database
 https://flick-critic-db.herokuapp.com/api/movies
 
+## API
+API
+```json
+{
+       "title": " Coming To America",
+       "mainImage": "url",
+       "infoImage": "url",
+       "movieInfo": {
+           "summary": "An extremely pampered African Prince travels to Queens, New York, and goes undercover to find a wife that he can respect for her intelligence and will.",
+           "director": "John Landis",
+           "writers": "Eddie Murphy (story), David Sheffield (screenplay) ",
+           "genres": " Comedy, Romance",
+           "rated": "R",
+           "releaseDate": "29-06-1988"
+       },
+       "reviews": [
+           { "review": " this is a great show", "datePosted": "02-08-2020" },
+           { "review": "this show sucks man", "datePosted": "02-08-2020" }
+       ]
+   }
+```
+
 ## Deployment
 Add additional notes about how to deploy this on a live system
 ## Contributing
