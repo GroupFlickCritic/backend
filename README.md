@@ -13,6 +13,9 @@ You need mongodb community and Node installed on your machine.
 
 ```
 ### Installing
+1. Fork and clone this repository.
+1. Change into the new directory and create a development branch to work on. 
+
 On your terminal,
 ```
 run npm install
