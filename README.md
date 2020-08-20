@@ -2,7 +2,7 @@
 
 ![Screen Shot 2020-08-20 at 12 45 15 PM](https://user-images.githubusercontent.com/64725210/90806699-0191b000-e2e3-11ea-9833-8a31ba741ef0.png)
 
-# Flick-Critic API
+# "flickcritic." API
 Our API, built with Express and Node.js, is an API with two linked models - a database of movies containing ids of their individual reviews which are based in a database of reviews which as well contain ids of their individual movies.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
