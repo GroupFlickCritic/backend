@@ -126,7 +126,7 @@ Movie.deleteMany({})
 				mainImage:
 					'https://user-images.githubusercontent.com/65630204/90316469-72eeee80-def0-11ea-830b-e7cfddbba8e4.jpg',
 				infoImage:
-					'https://user-images.githubusercontent.com/65630204/90316845-00334280-def3-11ea-93d3-bca801e01b18.jpg',
+					'https://user-images.githubusercontent.com/65630204/90797206-554dca80-e2de-11ea-83c1-b37ae6e0176b.jpg',
 				movieInfo: {
 					summary:
 						"Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
