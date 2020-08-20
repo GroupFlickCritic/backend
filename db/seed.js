@@ -310,9 +310,9 @@ Movie.deleteMany({})
 			Movie.create({
 				title: 'The Lord of the Rings: The Fellowship of the Rings',
 				mainImage:
-					'https://user-images.githubusercontent.com/65630204/90316988-3de49b00-def4-11ea-89fb-650eb1f69d41.jpg',
+					'https://user-images.githubusercontent.com/58578450/90794921-09e1ef00-e2d3-11ea-9787-36092b462c3c.jpg',
 				infoImage:
-					'https://user-images.githubusercontent.com/65630204/90317035-9025bc00-def4-11ea-8440-c4fb2b6206b3.jpg',
+					'https://user-images.githubusercontent.com/58578450/90794866-f2a30180-e2d2-11ea-9986-325198aa0b1a.jpg',
 				movieInfo: {
 					summary:
 						'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
