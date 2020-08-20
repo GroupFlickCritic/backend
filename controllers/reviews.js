@@ -35,7 +35,7 @@ router.put('/:id', (req, res) => {
 	Review.findOneAndUpdate({ _id: req.params.id }, updatedReview, {
 		new: true,
 	})
-		.then((updatedReview) => {
+		.then(() => {
 			Review.find({})
 				.then((allReviews) => {
 					res.json(allReviews);
@@ -45,15 +45,7 @@ router.put('/:id', (req, res) => {
 		.catch(console.error);
 });
 
-// router.delete('/:id', (req, res) => {
-// 	Review.findOneAndDelete({ _id: req.params.id }).then((deletedReview) => {
-// 		Review.find({})
-// 			.then((allReviews) => {
-// 				res.json(allReviews);
-// 			})
-// 			.catch(console.error);
-// 	});
-// });
+
 
 //delete a review by its id and delete the review from it's movie reviews array
 router.delete('/:id/:movieId', (req, res) => {
