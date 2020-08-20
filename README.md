@@ -64,6 +64,9 @@ API
 }
 ```
 
+## Table of Routes
+![](https://user-images.githubusercontent.com/64725210/90826983-082f2000-e301-11ea-82bc-aa2d9031414f.png)
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
