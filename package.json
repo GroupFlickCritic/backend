@@ -1,27 +1,27 @@
 {
-  "name": "flickcritic-backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GroupFlickCritic/backend.git"
-  },
-  "bugs": {
-    "url": "https://github.com/GroupFlickCritic/backend/issues"
-  },
-  "homepage": "https://github.com/GroupFlickCritic/backend#readme",
-  "description": "",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.10.0",
-    "nodemon": "^2.0.4"
-  }
+	"name": "flickcritic-backend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GroupFlickCritic/backend.git"
+	},
+	"bugs": {
+		"url": "https://github.com/GroupFlickCritic/backend/issues"
+	},
+	"homepage": "https://github.com/GroupFlickCritic/backend#readme",
+	"description": "",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mongoose": "^5.10.0",
+		"nodemon": "^2.0.4"
+	}
 }
