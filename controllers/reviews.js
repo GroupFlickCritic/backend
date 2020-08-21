@@ -36,7 +36,7 @@ router.post('/:movieId', (req, res) => {
 		.then((theNewReview) => {
 			//return the created review
 			Movie.findById({ _id: req.params.movieId }).then((movie) => {
-				movie.reviews.push(newReview._id);
+				movie.reviews.push(theNewReview._id);
 				movie.save();
 				res.json(theNewReview);
 			});
