@@ -30,30 +30,19 @@ router.get('/:id', (req, res) => {
 // });
 
 //create a new review
-router.post('/:movieId', (req, res)=>{
-	const movieId = req.params.movieId;
-	const newReview = req.body;
-	//create a new review 
+router.post('/:movieId', (req, res) => {
+	let newReview = req.body;
 	Review.create(newReview)
 		.then((theNewReview) => {
 			//return the created review
-			// res.json(theNewReview);
-
-			//then add the newly created review's id to the movie list
-			Movie.findOneAndUpdate({ _id: movieId })
-				.then((movie) => {
-					// push each id into the others array
-					movie.reviews.push(theNewReview._id);
-					// save both
-					movie.save();
-					// send json response
-					//we are getting back the updated movie
-					res.json(movie);
-				})
-				.catch(console.error);
+			Movie.findById({ _id: req.params.movieId }).then((movie) => {
+				movie.reviews.push(newReview._id);
+				movie.save();
+				res.json(theNewReview);
+			});
 		})
 		.catch(console.error);
-})
+});
 
 //update review by movie id and review id
 router.put('/:id', (req, res) => {
