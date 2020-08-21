@@ -2,11 +2,11 @@ const express = require('express');
 
 const moviesController = require('./controllers/movies');
 const reviewsController = require('./controllers/reviews');
-// const cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
