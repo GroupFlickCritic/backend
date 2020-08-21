@@ -39,6 +39,8 @@ run brew services restart mongodb-community
 #### Endpoint to fetch the data of all movies in the database
 
 https://flick-critic-db.herokuapp.com/api/movies
+#### Endpoint to fetch the data of all reviews in the database
+https://flick-critic-db.herokuapp.com/api/reviews
 
 ## API
 
@@ -69,7 +71,7 @@ API
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This app was deployed to heroku and our database is being managed in [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
 ## Contributing
 
