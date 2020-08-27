@@ -1,5 +1,5 @@
 const Movie = require('../models/Movie');
-const Review = require('../models/Review');
+const {Review} = require('../models/Review');
 
 Movie.deleteMany({})
 	.then(() => {

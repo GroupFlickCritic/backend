@@ -1,6 +1,6 @@
 const express = require('express');
 const Movie = require('../models/Movie');
-const Review = require('../models/Review');
+const {Review} = require('../models/Review');
 const router = express.Router();
 
 // Get all the movies
@@ -8,6 +8,15 @@ router.get('/', (req, res) => {
 	Movie.find({})
 		.then((allMovies) => {
 			res.json(allMovies);
+		})
+		.catch(console.error);
+});
+
+// Get a movie by title
+router.get('/:title', (req, res) => {
+	Movie.find({ title: req.params.title })
+		.then((movieByTitle) => {
+			res.json(movieByTitle);
 		})
 		.catch(console.error);
 });
@@ -31,15 +40,6 @@ router.put('/:id/:reviewId', (req, res) => {
 					res.json(movie);
 				})
 				.catch(console.error);
-		})
-		.catch(console.error);
-});
-
-// Get a movie by title
-router.get('/:title', (req, res) => {
-	Movie.find({ title: req.params.title })
-		.then((movieByTitle) => {
-			res.json(movieByTitle);
 		})
 		.catch(console.error);
 });

@@ -1,5 +1,5 @@
 const express = require('express');
-const Review = require('../models/Review');
+const {Review} = require('../models/Review');
 const Movie = require('../models/Movie');
 const router = express.Router();
 
@@ -18,16 +18,6 @@ router.get('/:id', (req, res) => {
 		})
 		.catch(console.error);
 });
-//create a new review
-// router.post('/', (req, res) => {
-// 	let newReview = req.body;
-// 	Review.create(newReview)
-// 		.then((theNewReview) => {
-// 			//return the created review
-// 			res.json(theNewReview);
-// 		})
-// 		.catch(console.error);
-// });
 
 //create a new review
 router.post('/:movieId', (req, res) => {
@@ -47,11 +37,13 @@ router.post('/:movieId', (req, res) => {
 //update review by movie id and review id
 router.put('/:id', (req, res) => {
 	let updatedReview = req.body;
-	Review.findOneAndUpdate({ _id: req.params.id }, updatedReview, {
-		new: true,
-	})
+	Review
+		.findOneAndUpdate({ _id: req.params.id }, updatedReview, {
+			new: true,
+		})
 		.then((updatedReview) => {
-			Review.find({})
+			Review
+				.find({})
 				.then((allReviews) => {
 					res.json(allReviews);
 				})
@@ -63,11 +55,13 @@ router.put('/:id', (req, res) => {
 //delete a review by its id and delete the review from it's movie reviews array
 router.delete('/:id/:movieId', (req, res) => {
 	let newMovie = req.body;
-	Movie.findOneAndUpdate({ _id: req.params.movieId }, newMovie, { new: true })
+	Movie
+		.findOneAndUpdate({ _id: req.params.movieId }, newMovie, { new: true })
 		.then(() => {
-			Review.findOneAndDelete({
-				_id: req.params.id,
-			})
+			Review
+				.findOneAndDelete({
+					_id: req.params.id,
+				})
 				.then((deletedReview) => {
 					res.json(deletedReview);
 				})

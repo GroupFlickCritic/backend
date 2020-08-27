@@ -13,7 +13,8 @@ mongoose
 		console.log(`connected to mongodb on ${conn.connections[0].name} db`);
 	})
 	.catch((error) => {
-		console.log(error);
+		console.error(error);
 	});
+
 
 module.exports = mongoose;

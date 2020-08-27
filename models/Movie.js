@@ -1,3 +1,4 @@
+const {ReviewSchema} = require('./Review')
 const mongoose = require('../db/connection');
 // in Movie.js
 const MovieSchema = mongoose.Schema({
@@ -12,7 +13,7 @@ const MovieSchema = mongoose.Schema({
 		rated: String,
 		releaseDate: String,
 	},
-	reviews: [{ ref: 'Review', type: mongoose.Schema.Types.ObjectId }],
+	reviews: [ReviewSchema],
 });
 const Movie = mongoose.model('Movie', MovieSchema);
 

@@ -1,8 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 
 const moviesController = require('./controllers/movies');
 const reviewsController = require('./controllers/reviews');
-const cors = require('cors');
 
 const app = express();
 
