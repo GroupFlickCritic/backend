@@ -19,20 +19,6 @@ router.get('/:id', (req, res) => {
 		.catch(console.error);
 });
 
-//create a new review
-router.post('/:movieId', (req, res) => {
-	let newReview = req.body;
-	Review.create(newReview)
-		.then((theNewReview) => {
-			//return the created review
-			Movie.findById({ _id: req.params.movieId }).then((movie) => {
-				movie.reviews.push(theNewReview._id);
-				movie.save();
-				res.json(theNewReview);
-			});
-		})
-		.catch(console.error);
-});
 
 //update review by movie id and review id
 router.put('/:id', (req, res) => {

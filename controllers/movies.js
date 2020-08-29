@@ -44,6 +44,17 @@ router.put('/:id/:reviewId', (req, res) => {
 		.catch(console.error);
 });
 
+//create a new review
+router.put('/:id', (req, res) => {
+	let newReview = req.body;
+	Movie.findById({_id: req.params.id}).then((movie)=>{
+		movie.reviews.push(newReview);
+		movie.save()
+		res.json(movie)
+	}).catch(console.error)
+});
+
+
 // Delete a movie by title
 router.delete('/:title', (req, res) => {
 	Movie.findOneAndDelete({ title: req.params.title })
