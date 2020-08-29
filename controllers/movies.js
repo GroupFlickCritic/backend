@@ -60,7 +60,7 @@ router.delete('/:title', (req, res) => {
 		.catch(console.error);
 });
 
-router.delete('/:id/:index', (req, res) => {
+router.delete('/:id/:index/:reviewId', (req, res) => {
 	let newMovie = req.body;
 	let index = req.params.index;
 	Movie.findById({ _id: req.params.id })
@@ -68,6 +68,8 @@ router.delete('/:id/:index', (req, res) => {
 			movie.reviews.splice(index, 1)
 			movie.save()
 			res.json(movie)
+		}).then(()=>{
+			Review.findByIdAndDelete({_id: req.params.reviewId})
 		})
 		.catch(console.error);
 });
