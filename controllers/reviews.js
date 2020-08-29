@@ -18,6 +18,21 @@ router.get('/:id', (req, res) => {
 		})
 		.catch(console.error);
 });
+//create a new review
+router.post('/:movieId', (req, res) => {
+	let newReview = req.body;
+	Review.create(newReview).then((review)=>{
+
+		Movie.findById({ _id: req.params.movieId })
+			.then((movie) => {
+				movie.reviews.push(review._id);
+				movie.save();
+				res.json(movie);
+			})
+			.catch(console.error);
+	})
+	
+});
 
 
 //update review by movie id and review id
