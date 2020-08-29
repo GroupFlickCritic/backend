@@ -67,9 +67,11 @@ router.delete('/:id/:index/:reviewId', (req, res) => {
 		.then((movie) => {
 			movie.reviews.splice(index, 1)
 			movie.save()
-			res.json(movie)
-		}).then(()=>{
-			Review.findByIdAndDelete({_id: req.params.reviewId})
+			return movie
+		}).then((movie)=>{
+			Review.findByIdAndDelete({_id: req.params.reviewId}).then(()=>{
+				res.json(movie);
+			})
 		})
 		.catch(console.error);
 });
