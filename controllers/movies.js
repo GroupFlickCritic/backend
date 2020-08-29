@@ -58,4 +58,16 @@ router.delete('/:title', (req, res) => {
 		.catch(console.error);
 });
 
+router.delete('/:id/:index', (req, res) => {
+	let newMovie = req.body;
+	let index = req.params.index;
+	Movie.findById({ _id: req.params.id })
+		.then((movie) => {
+			movie.reviews.splice(index, 1)
+			movie.save()
+			res.json(movie)
+		})
+		.catch(console.error);
+});
+
 module.exports = router;

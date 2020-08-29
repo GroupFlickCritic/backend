@@ -53,20 +53,5 @@ router.put('/:id', (req, res) => {
 });
 
 //delete a review by its id and delete the review from it's movie reviews array
-router.delete('/:id/:movieId', (req, res) => {
-	let newMovie = req.body;
-	Movie
-		.findOneAndUpdate({ _id: req.params.movieId }, newMovie, { new: true })
-		.then(() => {
-			Review
-				.findOneAndDelete({
-					_id: req.params.id,
-				})
-				.then((deletedReview) => {
-					res.json(deletedReview);
-				})
-				.catch(console.error);
-		})
-		.catch(console.error);
-});
+
 module.exports = router;
