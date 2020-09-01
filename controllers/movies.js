@@ -22,27 +22,27 @@ router.get('/:title', (req, res) => {
 });
 
 // add a review by movie
-router.put('/:id/:reviewId', (req, res) => {
-	const movieID = req.params.id;
-	const reviewID = req.params.reviewId;
-	// find a review by its id
-	Review.findById({ _id: reviewID })
-		.then((review) => {
-			// find the movie by its id
-			Movie.findOneAndUpdate({ _id: movieID })
-				.then((movie) => {
-					// push each id into the others array
-					movie.reviews.push(review._id);
-					// save both
-					movie.save();
-					// send json response
-					//we are getting back the updated movie
-					res.json(movie);
-				})
-				.catch(console.error);
-		})
-		.catch(console.error);
-});
+// router.put('/:id/:reviewId', (req, res) => {
+// 	const movieID = req.params.id;
+// 	const reviewID = req.params.reviewId;
+// 	// find a review by its id
+// 	Review.findById({ _id: reviewID })
+// 		.then((review) => {
+// 			// find the movie by its id
+// 			Movie.findOneAndUpdate({ _id: movieID })
+// 				.then((movie) => {
+// 					// push each id into the others array
+// 					movie.reviews.push(review._id);
+// 					// save both
+// 					movie.save();
+// 					// send json response
+// 					//we are getting back the updated movie
+// 					res.json(movie);
+// 				})
+// 				.catch(console.error);
+// 		})
+// 		.catch(console.error);
+// });
 
 
 
@@ -60,8 +60,8 @@ router.delete('/:title', (req, res) => {
 		.catch(console.error);
 });
 
+//delete a review by its index and its id
 router.delete('/:id/:index/:reviewId', (req, res) => {
-	let newMovie = req.body;
 	let index = req.params.index;
 	Movie.findById({ _id: req.params.id })
 		.then((movie) => {

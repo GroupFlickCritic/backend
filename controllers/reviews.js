@@ -35,20 +35,21 @@ router.post('/:movieId', (req, res) => {
 });
 
 
+
 //update review by movie id and review id
-router.put('/:id', (req, res) => {
+router.put('/:movieId/:id/:index', (req, res) => {
 	let updatedReview = req.body;
+	let index = req.params.index
 	Review
 		.findOneAndUpdate({ _id: req.params.id }, updatedReview, {
 			new: true,
 		})
 		.then((updatedReview) => {
-			Review
-				.find({})
-				.then((allReviews) => {
-					res.json(allReviews);
-				})
-				.catch(console.error);
+			Movie.findById({_id: req.params.movieId}).then((movie)=>{
+				movie.reviews[index] = updatedReview
+				movie.save()
+				res.json(movie)
+			}).catch(console.error);
 		})
 		.catch(console.error);
 });
