@@ -34,8 +34,6 @@ router.post('/:movieId', (req, res) => {
 	
 });
 
-
-
 //update review by movie id and review id
 router.put('/:movieId/:id/:index', (req, res) => {
 	let updatedReview = req.body;
@@ -54,6 +52,6 @@ router.put('/:movieId/:id/:index', (req, res) => {
 		.catch(console.error);
 });
 
-//delete a review by its id and delete the review from it's movie reviews array
+
 
 module.exports = router;
